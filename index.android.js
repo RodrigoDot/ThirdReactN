@@ -222,7 +222,6 @@ class App extends Component {
             style={ buttonStyle }
             onPress={ () => { this.choosen('Pedra') } }
             >
-            {/* <Text style={ buttonText }>Pedra</Text> */}
             <Image source={ require('./imgs/pedra.png') }></Image>
             <Text style={ buttonText }>Pedra</Text>
           </TouchableOpacity>
