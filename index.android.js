@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   Text,
-  View
+  View,
+  Button,
+  Alert
 } from 'react-native';
 
 const Styles = {
@@ -13,18 +15,40 @@ class MainComponent extends Component {
   render() {
     return (
       <View>
-        <Text>Ola</Text>
-        <Text>Eu sou Rodrigo</Text>
+        <Text>{ this.props.label }</Text>
       </View>
     );
   }
 }
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: 'Original text'
+    };
+  }
+
+  onButtonClick = () => {
+
+    this.setState({
+      text: 'Second text'
+    });
+  }
+
   render() {
     return(
-      <MainComponent>
-      </MainComponent>
+      <View>
+        <MainComponent
+          label= { this.state.text }
+        >
+        </MainComponent>
+        <Button
+          title='Click'
+          onPress={ () => {this.onButtonClick()} }
+        />
+      </View>
     );
   }
 }
