@@ -18,7 +18,8 @@ const Styles = {
 
 class Result extends Component {
   render() {
-    const { resultViewText, resultView } = Styles;
+
+    const { resultView, resultViewText } = Styles;
 
     if(this.props.result == 'win') {
       return(
