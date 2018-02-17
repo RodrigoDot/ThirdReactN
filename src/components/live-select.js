@@ -5,6 +5,11 @@ import {
   Image
 } from 'react-native';
 
+const stoneImage = require('../../imgs/pedra.png');
+const paperImage = require('../../imgs/papel.png');
+const scissorsImage = require('../../imgs/tesoura.png');
+const emptyImage = require('../../imgs/empty.png');
+
 const Styles = {
   selectedText: {
     color: '#000',
@@ -20,28 +25,28 @@ class LiveSelect extends Component {
       return(
         <View>
           <Text style={ selectedText }>{ this.props.player }</Text>
-          <Image source={ require('../../imgs/pedra.png') }></Image>
+          <Image source={ stoneImage }></Image>
         </View>
       );
     }else if(this.props.selected == 'Papel') {
       return(
         <View>
           <Text style={ selectedText }>{ this.props.player }</Text>
-          <Image source={ require('../../imgs/papel.png') }></Image>
+          <Image source={ paperImage }></Image>
         </View>
       );
     }else if(this.props.selected == 'Tesoura') {
       return(
         <View>
           <Text style={ selectedText }>{ this.props.player }</Text>
-          <Image source={ require('../../imgs/tesoura.png') }></Image>
+          <Image source={ scissorsImage }></Image>
         </View>
       );
     } else {
       return(
         <View>
           <Text style={ selectedText }>{ this.props.player }</Text>
-          <Image source={ require('../../imgs/empty.png') }></Image>
+          <Image source={ emptyImage }></Image>
         </View>
       );
     }

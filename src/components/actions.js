@@ -9,6 +9,10 @@ import {
 import Selecteds from './selecteds';
 import Result from './result';
 
+const stoneImage = require('../../imgs/pedra.png');
+const paperImage = require('../../imgs/papel.png');
+const scissorsImage = require('../../imgs/tesoura.png');
+
 const Styles = {
   actionsView: {
     flex: 5,
@@ -54,18 +58,18 @@ class Actions extends Component {
   }
 
   getComputerChoice(userSelected) {
-    computerSelected = '';
+    let computerSelected = '';
 
     //Getting some aleatory choice
-    var computerChoiceNumber = Math.floor(Math.random() * 3);
+    let computerChoiceNumber = Math.floor(Math.random() * 3);
 
-    if(computerChoiceNumber == 0) {
+    if(computerChoiceNumber === 0) {
       computerSelected = 'Pedra';
     }
-    if(computerChoiceNumber == 1) {
+    if(computerChoiceNumber === 1) {
       computerSelected = 'Papel';
     }
-    if(computerChoiceNumber == 2) {
+    if(computerChoiceNumber === 2) {
       computerSelected = 'Tesoura';
     }
 
@@ -76,25 +80,25 @@ class Actions extends Component {
   setResult(userSelected, computerSelected) {
 
     //Calculating the result
-    if(userSelected == computerSelected) {
+    if(userSelected === computerSelected) {
         result = 'draw';
     }
-    if(userSelected == 'Pedra' && computerSelected == 'Tesoura') {
+    if(userSelected === 'Pedra' && computerSelected === 'Tesoura') {
         result = 'win';
     }
-    if(userSelected == 'Pedra' && computerSelected == 'Papel') {
+    if(userSelected === 'Pedra' && computerSelected === 'Papel') {
         result = 'lost';
     }
-    if(userSelected == 'Papel' && computerSelected == 'Pedra') {
+    if(userSelected === 'Papel' && computerSelected === 'Pedra') {
         result = 'win';
     }
-    if(userSelected == 'Papel' && computerSelected == 'Tesoura') {
+    if(userSelected === 'Papel' && computerSelected === 'Tesoura') {
         result = 'lost';
     }
-    if(userSelected == 'Tesoura' && computerSelected == 'Papel') {
+    if(userSelected === 'Tesoura' && computerSelected === 'Papel') {
         result = 'win';
     }
-    if(userSelected == 'Tesoura' && computerSelected == 'Pedra') {
+    if(userSelected === 'Tesoura' && computerSelected === 'Pedra') {
         result = 'lost';
     }
 
@@ -116,35 +120,39 @@ class Actions extends Component {
 
     return(
       <View style={ actionsView }>
+
         <View style={ choicesView }>
           <TouchableOpacity
             style={ buttonStyle }
-            onPress={ () => { this.choosen('Pedra') } }
+            onPress={ () => { this.choosen('Pedra'); } }
             >
-            <Image source={ require('../../imgs/pedra.png') }></Image>
+            <Image source={ stoneImage }></Image>
             <Text style={ buttonText }>Pedra</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={ buttonStyle }
-            onPress={ () => { this.choosen('Papel') } }
+            onPress={ () => { this.choosen('Papel'); } }
             >
-            <Image source={ require('../../imgs/papel.png') }></Image>
+            <Image source={ paperImage }></Image>
             <Text style={ buttonText }>Papel</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={ buttonStyle }
-            onPress={ () => { this.choosen('Tesoura') } }
+            onPress={ () => { this.choosen('Tesoura'); } }
             >
-            <Image source={ require('../../imgs/tesoura.png') }></Image>
+            <Image source={ scissorsImage }></Image>
             <Text style={ buttonText }>Tesoura</Text>
           </TouchableOpacity>
         </View>
+
         <Selecteds
           userSelected={ this.state.userChoice }
           computerSelected={ this.state.computerChoice }
           >
         </Selecteds>
+
         <Result result={ this.state.result }></Result>
+
       </View>
 
     )

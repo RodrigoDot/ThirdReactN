@@ -4,6 +4,8 @@ import {
   Image
 } from 'react-native';
 
+const headerImage = require('../../imgs/jokenpo.png');
+
 const Styles = {
   headerView: {
     flex: 3
@@ -17,7 +19,7 @@ class Header extends Component {
 
     return(
       <View style={ headerView }>
-        <Image source={ require('../../imgs/jokenpo.png') } >
+        <Image source={ headerImage } >
         </Image>
       </View>
     )

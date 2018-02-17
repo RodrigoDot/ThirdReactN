@@ -22,7 +22,7 @@ class App extends Component {
     return(
       <View style={ mainView }>
 
-        <Header></Header>
+        <Header />
 
         <Actions></Actions>
 
