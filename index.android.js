@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Text,
   View,
-  TouchableOpacity,
-  Alert,
-  Image
 } from 'react-native';
 
 import Header from './src/components/header';
