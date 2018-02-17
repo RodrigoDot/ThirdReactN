@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  StyleSheet,
   View,
 } from 'react-native';
 
 import Header from './src/components/header';
 import Actions from './src/components/actions';
 
-const Styles = {
+const Styles = StyleSheet.create({
   mainView: {
     flex: 1
   }
-}
+});
 
 class App extends Component {
 
